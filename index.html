@@ -281,9 +281,13 @@
       .panel li { padding: 12px 13px; border-radius: 12px; background: #f3f8f6; line-height: 1.65; }
       .panel li strong { color: var(--forest); }
       .panel li span { display: block; color: var(--muted); font-size: 0.91rem; }
+      .panel li.recommended { border-left: 4px solid #4d8b65; background: #e6f3eb; }
+      .panel li.caution { border-left: 4px solid #d6a84f; background: #fff2dc; }
       .alert { border-color: #ead1c3; background: #fffaf5; }
       .alert li { background: #fff1e9; }
       .alert li strong { color: #8a482f; }
+      .alert li.recommended { border-left-color: #4d8b65; background: #e6f3eb; }
+      .alert li.recommended strong { color: var(--forest); }
 
       .costs { width: 100%; border-collapse: collapse; margin-top: 14px; font-variant-numeric: tabular-nums; }
       .costs th, .costs td { padding: 12px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -365,6 +369,7 @@
       <div class="wrap">
         <a href="#overview">先看重點</a>
         <a href="#schedule">完整行程</a>
+        <a href="#trains">彈性班次</a>
         <a href="#shifen">十分玩法</a>
         <a href="#backup">錯過車怎麼辦</a>
         <a href="#budget">費用與準備</a>
@@ -455,6 +460,56 @@
           <article class="event">
             <time datetime="2026-09-26T16:09">16:09</time><span class="marker"></span>
             <div class="event-card"><div><h3>瑞芳 → 臺北｜1223 次區間車</h3><p>16:09 出發，17:02 抵達臺北。接著搭紅線至東門、換中和新蘆線，約 17:30 回到南勢角，仍保留約 30 分鐘回家。</p><div class="meta"><span class="status fixed">固定 · 16:09–17:02</span><span class="status">全票 NT$73</span></div></div><a class="action" href="https://www.google.com/maps/dir/?api=1&origin=%E8%87%BA%E5%8C%97%E8%BB%8A%E7%AB%99&destination=%E5%8D%97%E5%8B%A2%E8%A7%92%E6%8D%B7%E9%81%8B%E7%AB%99&travelmode=transit" target="_blank" rel="noopener">返程導航</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="trains">
+        <div class="section-head">
+          <div><span class="kicker">FLEXIBLE TRAINS</span><h2>臨時調整可選這幾班</h2></div>
+          <p>班次依 9/26 臺鐵官方查詢整理。綠色為原定方案，黃色為條件式備案，橘色回程通常會讓到家時間超過 18:00。</p>
+        </div>
+
+        <div class="notice">
+          <span class="pill">快速判斷</span>
+          <p><strong>要保住 18:00 前到家：</strong>臺北最晚搭 10:05、瑞芳最晚搭 11:55 去十分，並務必搭上十分 14:40 回瑞芳與瑞芳 16:09 回臺北。</p>
+        </div>
+
+        <div class="two-col">
+          <article class="panel">
+            <h3>臺北 → 瑞芳</h3>
+            <ul>
+              <li class="caution"><strong>09:11 → 09:43｜214 次自強號</strong><span>需劃位；若 08:30 才離開南勢角，轉乘太趕，不建議當主方案。</span></li>
+              <li class="recommended"><strong>09:20 → 10:28｜4162 次區間車</strong><span>推薦主班次。08:30 從南勢角出發，有較合理的找月台緩衝。</span></li>
+              <li class="caution"><strong>10:05 → 10:44｜4026 次區間快</strong><span>可用晚班備案；抵達後午餐需壓在約 45 分鐘，仍要搭 11:55 平溪線。</span></li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>瑞芳 → 十分</h3>
+            <ul>
+              <li class="caution"><strong>10:55 → 11:22｜4818 次區間車</strong><span>若改成先玩十分、回瑞芳再吃飯可選；不符合原本先在瑞芳用餐的順序。</span></li>
+              <li class="recommended"><strong>11:55 → 12:22｜4822 次區間車</strong><span>推薦主班次，週末及假日行駛；可兼顧瑞芳早午餐與十分行程。</span></li>
+              <li class="caution"><strong>13:00 → 13:27｜4824 次區間車</strong><span>晚班備案；無法完整走老街加瀑布並穩定趕上 14:40 回程。</span></li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>十分 → 瑞芳</h3>
+            <ul>
+              <li class="recommended"><strong>14:40 → 15:12｜4825 次區間車</strong><span>推薦且是硬性回程；接 16:09 回臺北，有 57 分鐘轉乘緩衝。</span></li>
+              <li class="caution"><strong>15:35 → 16:04｜4827 次區間車</strong><span>晚班備案；只剩 5 分鐘接 16:09，不能保證。若改搭 16:48，通常會超過 18:00 到家。</span></li>
+            </ul>
+          </article>
+
+          <article class="panel alert">
+            <h3>瑞芳 → 臺北</h3>
+            <ul>
+              <li class="recommended"><strong>16:09 → 17:02｜1223 次區間車</strong><span>推薦主班次；約 17:30 回南勢角，保留約 30 分鐘回家。</span></li>
+              <li><strong>16:48 → 17:43｜4191 次區間車</strong><span>安全備案；回南勢角約 18:10，通常無法在 18:00 前到家。</span></li>
+              <li><strong>16:55 → 17:35｜277 次自強號</strong><span>需劃位；雖較快，但回到南勢角仍大約 18:00，返家緩衝不足。</span></li>
+              <li><strong>17:26 → 18:18｜4193 次區間車</strong><span>晚回備案；適合決定延長遊玩時使用，不符合 18:00 前到家。</span></li>
+            </ul>
           </article>
         </div>
       </section>
