@@ -6,14 +6,14 @@
     <meta name="theme-color" content="#153d37" />
     <meta
       name="description"
-      content="2026 年 9 月 26 日從南勢角出發，走訪瑞芳在地美食、十分鐵道老街、河谷步道與十分瀑布的一日旅行。"
+      content="2026 年 9 月 26 日從南勢角出發，走訪瑞芳美食、新村芳書院、十分鐵道老街、河谷步道與十分瀑布的一日旅行。"
     />
     <meta property="og:locale" content="zh_TW" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="瑞芳・十分一日小旅行" />
     <meta
       property="og:description"
-      content="從瑞芳在地小吃出發，搭平溪線看十分鐵道街景，再沿河谷步行到十分瀑布。"
+      content="從瑞芳在地小吃與百年老屋出發，搭平溪線看十分鐵道街景，再沿河谷步行到十分瀑布。"
     />
     <meta property="og:url" content="https://bhevantw.github.io/ruifang-shifen-2026-trip/" />
     <title>瑞芳・十分一日小旅行｜2026.09.26</title>
@@ -183,15 +183,15 @@
 
       .highlight-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
         margin-bottom: 38px;
       }
       .highlight-card {
         display: flex;
-        min-height: 340px;
+        min-height: 520px;
         flex-direction: column;
-        padding: 24px;
+        overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 22px;
         background: rgba(255, 255, 255, 0.9);
@@ -200,13 +200,20 @@
       .highlight-card.food { background: linear-gradient(155deg, #fff8e8, #fffdf8 60%); }
       .highlight-card.rail { background: linear-gradient(155deg, #edf7f3, #fffdf8 60%); }
       .highlight-card.waterfall { background: linear-gradient(155deg, #eaf6f7, #fffdf8 60%); }
-      .highlight-icon { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 15px; background: rgba(255, 255, 255, 0.8); font-size: 1.42rem; box-shadow: 0 5px 16px rgba(21, 61, 55, 0.08); }
-      .highlight-card h3 { margin-top: 20px; color: var(--forest); font-size: 1.28rem; line-height: 1.4; }
+      .highlight-card.books { background: linear-gradient(155deg, #f2eee5, #fffdf8 60%); }
+      .highlight-photo { position: relative; height: 220px; margin: 0; overflow: hidden; background: var(--mist); }
+      .highlight-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+      .highlight-card:hover .highlight-photo img { transform: scale(1.025); }
+      .highlight-photo figcaption, .event-photo figcaption { position: absolute; right: 9px; bottom: 8px; left: 9px; width: fit-content; max-width: calc(100% - 18px); padding: 5px 8px; border-radius: 7px; color: #fff; background: rgba(8, 35, 30, 0.74); font-size: 0.7rem; line-height: 1.35; }
+      .highlight-body { display: flex; flex: 1; flex-direction: column; padding: 22px 24px 24px; }
+      .highlight-icon { display: grid; width: 48px; height: 48px; place-items: center; margin-top: -47px; position: relative; border: 5px solid #fffdf8; border-radius: 16px; background: #fff; font-size: 1.42rem; box-shadow: 0 5px 16px rgba(21, 61, 55, 0.12); }
+      .highlight-card h3 { margin-top: 14px; color: var(--forest); font-size: 1.28rem; line-height: 1.4; }
       .highlight-card > p { margin-top: 10px; color: var(--muted); line-height: 1.72; }
+      .highlight-body > p { margin-top: 10px; color: var(--muted); line-height: 1.72; }
       .highlight-card ul { display: grid; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
       .highlight-card li { padding-left: 17px; position: relative; color: var(--ink); font-size: 0.92rem; line-height: 1.55; }
       .highlight-card li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 7px; height: 7px; border-radius: 50%; background: var(--sun); }
-      .highlight-card a { width: fit-content; margin-top: auto; padding-top: 18px; color: var(--water); font-weight: 850; text-decoration: none; }
+      .highlight-card .highlight-link { width: fit-content; margin-top: auto; padding-top: 18px; color: var(--water); font-weight: 850; text-decoration: none; }
       .highlight-card a:hover, .highlight-card a:focus-visible { text-decoration: underline; outline: none; }
 
       .route-line {
@@ -259,6 +266,12 @@
       .event-card h3 { color: var(--forest); font-size: 1.06rem; line-height: 1.5; }
       .event-card p { margin-top: 6px; color: var(--muted); line-height: 1.66; }
       .event-card .meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+      .event-card.has-photo { grid-template-columns: minmax(0, 1fr) 230px; gap: 0; overflow: hidden; padding: 0; }
+      .event-content { padding: 18px 20px; }
+      .event-content .action { display: inline-flex; margin-top: 14px; }
+      .event-photo { position: relative; min-height: 210px; margin: 0; overflow: hidden; background: var(--mist); }
+      .event-photo a { display: block; width: 100%; height: 100%; }
+      .event-photo img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
       .status { padding: 5px 8px; background: var(--mist); color: var(--forest-2); font-size: 0.76rem; }
       .status.fixed { background: #e6f3eb; color: #316648; }
       .status.flex { background: #fff2dc; color: #8a5a12; }
@@ -362,6 +375,8 @@
         .event { grid-template-columns: 42px 16px minmax(0, 1fr); gap: 10px; }
         .event time { font-size: 0.86rem; }
         .event-card { grid-template-columns: 1fr; padding: 16px; }
+        .event-card.has-photo { grid-template-columns: 1fr; padding: 0; }
+        .event-photo { min-height: 220px; order: -1; }
         .action { justify-self: start; }
         .feature figure { min-height: 280px; }
         .feature-copy { padding: 23px 20px; }
@@ -385,7 +400,7 @@
       <div class="wrap">
         <span class="eyebrow">本週六 · 2026 年 9 月 26 日</span>
         <h1>瑞芳・十分<br />一日小旅行</h1>
-        <p class="hero-lead">從瑞芳的在地小吃開始，搭平溪線走進鐵道老街，再沿著河谷步道看十分瀑布。是一趟有味道、有街景，也有自然風景的小旅行。</p>
+        <p class="hero-lead">從瑞芳的在地小吃與百年老屋開始，搭平溪線走進鐵道老街，再沿著河谷步道看十分瀑布。一路從小鎮人文走到山水風景。</p>
         <div class="hero-meta" aria-label="旅程摘要">
           <div><span>集合</span><strong>08:25<br />南勢角捷運站</strong></div>
           <div><span>主交通</span><strong>捷運＋臺鐵<br />全程大眾運輸</strong></div>
@@ -411,26 +426,26 @@
     <main class="wrap">
       <section id="overview">
         <div class="section-head">
-          <div><span class="kicker">TRIP SNAPSHOT</span><h2>三種風景，一天剛剛好</h2></div>
-          <p>這趟不是只為了抵達瀑布：瑞芳的市場午餐、十分的鐵道街景，以及沿河步行到瀑布的過程，都是旅行本身。</p>
+          <div><span class="kicker">TRIP SNAPSHOT</span><h2>四種風景，一天剛剛好</h2></div>
+          <p>這趟不是只為了抵達瀑布：瑞芳的市場午餐、百年老屋書院、十分鐵道街景，以及沿河步行到瀑布的過程，都是旅行本身。</p>
         </div>
 
         <div class="notice">
           <span class="pill">旅行節奏</span>
-          <p><strong>上午吃瑞芳、午間逛老街、午後走瀑布。</strong>主行程已把返家時間算好；到現場只要記得 14:05 從瀑布往回走，其餘時間好好看風景。</p>
+          <p><strong>上午吃瑞芳、午間逛老街、午後走瀑布，回程再探一座百年書院。</strong>主行程已把返家時間算好；到現場只要記得 14:05 從瀑布往回走，其餘時間好好看風景。</p>
         </div>
 
         <div class="snapshot">
+          <article><span class="icon" aria-hidden="true">📚</span><strong>瑞芳｜百年老屋書院</strong><p>鐵道旁的老貨運倉庫變成書房、旅宿與地方文化交流空間。</p></article>
           <article><span class="icon" aria-hidden="true">🍜</span><strong>瑞芳｜市場系早午餐</strong><p>車站對面就能吃到肉羹、麵食、胡椒餅與各式台味小吃。</p></article>
           <article><span class="icon" aria-hidden="true">🚆</span><strong>老街｜火車穿過街屋</strong><p>月台接著老街，店家、天燈與行駛中的鐵道形成十分最有辨識度的風景。</p></article>
-          <article><span class="icon" aria-hidden="true">🌉</span><strong>步道｜橋與河谷相伴</strong><p>從老街一路經過吊橋與基隆河景，步行本身不只是轉場。</p></article>
-          <article><span class="icon" aria-hidden="true">💧</span><strong>瀑布｜寬闊水幕近看</strong><p>不同觀景台能看見水流落差與河谷層次，主景觀台最值得停留。</p></article>
+          <article><span class="icon" aria-hidden="true">💧</span><strong>河谷｜走向寬闊水幕</strong><p>一路經過橋面、基隆河與觀景台，步行本身不只是轉場。</p></article>
         </div>
 
         <div class="route-line" aria-label="今天的移動路線">
           <div class="stop"><span class="dot"></span><strong>南勢角</strong><span>08:30 捷運</span></div>
           <div class="stop"><span class="dot"></span><strong>臺北</strong><span>09:20 臺鐵</span></div>
-          <div class="stop"><span class="dot"></span><strong>瑞芳</strong><span>午餐＋轉乘</span></div>
+          <div class="stop"><span class="dot"></span><strong>瑞芳</strong><span>午餐＋百年書院</span></div>
           <div class="stop"><span class="dot"></span><strong>十分</strong><span>老街＋瀑布</span></div>
           <div class="stop"><span class="dot"></span><strong>南勢角</strong><span>約 17:30 返回</span></div>
         </div>
@@ -439,44 +454,68 @@
       <section id="highlights">
         <div class="section-head">
           <div><span class="kicker">WHY THIS TRIP</span><h2>這趟旅行好玩在哪裡</h2></div>
-          <p>三個停留點各有不同氣氛：先從熱鬧的小吃開始，走進貼著鐵道生長的街區，最後把步調放慢到河谷與瀑布。</p>
+          <p>四種停留各有不同氣氛：先從熱鬧的小吃開始，走進貼著鐵道生長的街區，把步調放慢到河谷與瀑布，最後用一座老書院收尾。</p>
         </div>
 
         <div class="highlight-grid">
           <article class="highlight-card food">
-            <span class="highlight-icon" aria-hidden="true">🍲</span>
-            <h3>瑞芳｜先吃一輪在地日常</h3>
-            <p>瑞芳美食廣場就在車站前，像一座濃縮的小吃市場。不必排同一家名店，每個人可以選自己想吃的，再一起分享。</p>
-            <ul>
-              <li>肉羹、麵食、胡椒餅、蚵仔煎都有機會找到</li>
-              <li>先繞一圈再點餐，比一進門就決定更有趣</li>
-              <li>留意份量，十分老街還能再補一份甜點或小吃</li>
-            </ul>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=%E7%91%9E%E8%8A%B3%E7%BE%8E%E9%A3%9F%E5%BB%A3%E5%A0%B4" target="_blank" rel="noopener">開啟瑞芳美食廣場導航 →</a>
+            <figure class="highlight-photo"><img src="assets/ruifang-market.jpg" alt="瑞芳美食廣場內的小吃攤位" loading="lazy" /><figcaption>雅婕／Wikimedia Commons，CC BY-SA 4.0</figcaption></figure>
+            <div class="highlight-body">
+              <span class="highlight-icon" aria-hidden="true">🍲</span>
+              <h3>瑞芳｜先吃一輪在地日常</h3>
+              <p>瑞芳美食廣場就在車站前，像一座濃縮的小吃市場。不必排同一家名店，每個人可以選自己想吃的，再一起分享。</p>
+              <ul>
+                <li>肉羹、麵食、胡椒餅、蚵仔煎都有機會找到</li>
+                <li>先繞一圈再點餐，比一進門就決定更有趣</li>
+                <li>留意份量，十分老街還能再補一份甜點或小吃</li>
+              </ul>
+              <a class="highlight-link" href="https://www.google.com/maps/dir/?api=1&destination=%E7%91%9E%E8%8A%B3%E7%BE%8E%E9%A3%9F%E5%BB%A3%E5%A0%B4" target="_blank" rel="noopener">開啟瑞芳美食廣場導航 →</a>
+            </div>
           </article>
 
           <article class="highlight-card rail">
-            <span class="highlight-icon" aria-hidden="true">🏮</span>
-            <h3>十分老街｜街屋沿著鐵道展開</h3>
-            <p>十分最迷人的不是單一店家，而是火車、街屋與遊客活動共存在很窄的空間裡。列車慢慢進站時，整條街會短暫改變節奏。</p>
-            <ul>
-              <li>從安全位置看列車貼著店家通過</li>
-              <li>天燈可寫下旅行願望，也可以只欣賞街景</li>
-              <li>月台、鐵橋與老街轉角都很適合拍照</li>
-            </ul>
-            <a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%88%86%E8%80%81%E8%A1%97" target="_blank" rel="noopener">開啟十分老街地圖 →</a>
+            <figure class="highlight-photo"><img src="assets/shifen-old-street.jpg" alt="十分老街與鐵道旁的街屋" loading="lazy" /><figcaption>Chainwit.／Wikimedia Commons，CC BY 4.0</figcaption></figure>
+            <div class="highlight-body">
+              <span class="highlight-icon" aria-hidden="true">🏮</span>
+              <h3>十分老街｜街屋沿著鐵道展開</h3>
+              <p>十分最迷人的不是單一店家，而是火車、街屋與遊客活動共存在很窄的空間裡。列車慢慢進站時，整條街會短暫改變節奏。</p>
+              <ul>
+                <li>從安全位置看列車貼著店家通過</li>
+                <li>天燈可寫下旅行願望，也可以只欣賞街景</li>
+                <li>月台、鐵橋與老街轉角都很適合拍照</li>
+              </ul>
+              <a class="highlight-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%88%86%E8%80%81%E8%A1%97" target="_blank" rel="noopener">開啟十分老街地圖 →</a>
+            </div>
           </article>
 
           <article class="highlight-card waterfall">
-            <span class="highlight-icon" aria-hidden="true">🌿</span>
-            <h3>十分瀑布｜先走河谷，再遇見水幕</h3>
-            <p>從車站到瀑布的二十多分鐘，不只是趕路。沿途經過橋面、基隆河與綠意，最後才從不同高度看見寬闊的瀑布水幕。</p>
-            <ul>
-              <li>主景觀台能完整看見瀑布正面與水氣</li>
-              <li>橋梁與河谷讓抵達前的步行也有變化</li>
-              <li>雨後水量較有氣勢，晴天則更適合慢慢拍照</li>
-            </ul>
-            <a href="https://newtaipei.travel/zh-tw/attractions/detail/109612" target="_blank" rel="noopener">查看十分瀑布官方介紹 →</a>
+            <figure class="highlight-photo"><img src="assets/shifen-waterfall.jpg" alt="十分瀑布寬闊的水幕與河谷" loading="lazy" /><figcaption>Li Hua-hsuan／Wikimedia Commons，CC0</figcaption></figure>
+            <div class="highlight-body">
+              <span class="highlight-icon" aria-hidden="true">🌿</span>
+              <h3>十分瀑布｜先走河谷，再遇見水幕</h3>
+              <p>從車站到瀑布的二十多分鐘，不只是趕路。沿途經過橋面、基隆河與綠意，最後才從不同高度看見寬闊的瀑布水幕。</p>
+              <ul>
+                <li>主景觀台能完整看見瀑布正面與水氣</li>
+                <li>橋梁與河谷讓抵達前的步行也有變化</li>
+                <li>雨後水量較有氣勢，晴天則更適合慢慢拍照</li>
+              </ul>
+              <a class="highlight-link" href="https://newtaipei.travel/zh-tw/attractions/detail/109612" target="_blank" rel="noopener">查看十分瀑布官方介紹 →</a>
+            </div>
+          </article>
+
+          <article class="highlight-card books">
+            <figure class="highlight-photo"><a data-flickr-embed="true" href="https://www.flickr.com/photos/lu_s/46611875931" title="新村芳書院實景照片"><img src="https://live.staticflickr.com/7876/46611875931_236c96fddc_b.jpg" alt="瑞芳老街巷弄中的新村芳書院外觀" loading="lazy" referrerpolicy="no-referrer" /></a><figcaption>外部相片：盧裕源／Flickr（點圖看原站）</figcaption></figure>
+            <div class="highlight-body">
+              <span class="highlight-icon" aria-hidden="true">📖</span>
+              <h3>新村芳書院｜鐵道旁的百年貨運行</h3>
+              <p>老貨運倉庫經過修繕後，成為息書房、旅宿與地方交流空間。巷弄、書牆、植栽與瓶燈，把瑞芳的舊故事收進很安靜的一角。</p>
+              <ul>
+                <li>從瑞芳車站後站步行約 2–4 分鐘</li>
+                <li>先看巷弄與老屋細節，現場開放才入內</li>
+                <li>目前沒有可信的固定開放時間，行前可先聯絡確認</li>
+              </ul>
+              <a class="highlight-link" href="https://www.google.com/maps/dir/?api=1&destination=%E6%96%B0%E6%9D%91%E8%8A%B3%E6%9B%B8%E9%99%A2" target="_blank" rel="noopener">開啟新村芳書院導航 →</a>
+            </div>
           </article>
         </div>
       </section>
@@ -502,7 +541,7 @@
       <section id="schedule">
         <div class="section-head">
           <div><span class="kicker">SATURDAY TIMELINE</span><h2>把一天串起來</h2></div>
-          <p>時間表放在景點介紹之後，方便出發時照著走。主要體驗依序是瑞芳午餐、十分老街、河谷步道與十分瀑布。</p>
+          <p>時間表放在景點介紹之後，每個主要停留都附上實景照片。體驗依序是瑞芳午餐、十分老街、河谷步道、十分瀑布與新村芳書院。</p>
         </div>
 
         <div class="timeline">
@@ -513,42 +552,42 @@
 
           <article class="event">
             <time datetime="2026-09-26T09:20">09:20</time><span class="marker"></span>
-            <div class="event-card"><div><h3>臺北 → 瑞芳｜4162 次區間車</h3><p>09:20 從臺北出發，10:28 抵達瑞芳。非對號列車，可使用電子票證；08:30 離開南勢角可保留找月台與買飲料的緩衝。</p><div class="meta"><span class="status fixed">固定 · 09:20–10:28</span><span class="status">全票 NT$73</span></div></div><a class="action" href="https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime" target="_blank" rel="noopener">臺鐵時刻</a></div>
+            <div class="event-card has-photo"><div class="event-content"><h3>臺北 → 瑞芳｜4162 次區間車</h3><p>09:20 從臺北出發，10:28 抵達瑞芳。非對號列車，可使用電子票證；08:30 離開南勢角可保留找月台與買飲料的緩衝。</p><div class="meta"><span class="status fixed">固定 · 09:20–10:28</span><span class="status">全票 NT$73</span></div><a class="action" href="https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime" target="_blank" rel="noopener">臺鐵時刻</a></div><figure class="event-photo"><img src="assets/ruifang-pingxi-train.jpg" alt="瑞芳車站月台旁的臺鐵列車" loading="lazy" /><figcaption>4300streetcar／Wikimedia Commons，CC BY 4.0</figcaption></figure></div>
           </article>
 
           <article class="event">
             <time datetime="2026-09-26T10:35">10:35</time><span class="marker"></span>
-            <div class="event-card"><div><h3>瑞芳美食廣場｜先繞一圈再開吃</h3><p>從車站前站過街就到。先看看每一排攤位，再挑肉羹、麵食、胡椒餅或蚵仔煎；比起追單一名店，更適合每個人點不同餐點一起分享。</p><div class="meta"><span class="status fixed">停留 · 10:35–11:30</span><span class="status">11:40 前回到月台</span></div></div><a class="action" href="https://www.google.com/maps/dir/?api=1&destination=%E7%91%9E%E8%8A%B3%E7%BE%8E%E9%A3%9F%E5%BB%A3%E5%A0%B4" target="_blank" rel="noopener">步行導航</a></div>
+            <div class="event-card has-photo"><div class="event-content"><h3>瑞芳美食廣場｜先繞一圈再開吃</h3><p>從車站前站過街就到。先看看每一排攤位，再挑肉羹、麵食、胡椒餅或蚵仔煎；比起追單一名店，更適合每個人點不同餐點一起分享。</p><div class="meta"><span class="status fixed">停留 · 10:35–11:30</span><span class="status">11:40 前回到月台</span></div><a class="action" href="https://www.google.com/maps/dir/?api=1&destination=%E7%91%9E%E8%8A%B3%E7%BE%8E%E9%A3%9F%E5%BB%A3%E5%A0%B4" target="_blank" rel="noopener">步行導航</a></div><figure class="event-photo"><img src="assets/ruifang-market.jpg" alt="瑞芳美食廣場內的小吃攤位" loading="lazy" /><figcaption>雅婕／Wikimedia Commons，CC BY-SA 4.0</figcaption></figure></div>
           </article>
 
           <article class="event">
             <time datetime="2026-09-26T11:55">11:55</time><span class="marker"></span>
-            <div class="event-card"><div><h3>瑞芳 → 十分｜4822 次區間車</h3><p>11:55 出發，12:22 抵達十分。這班為週末、假日行駛；平溪線班距長，11:40 前回到車站看月台並先上洗手間、補水。</p><div class="meta"><span class="status fixed">固定 · 11:55–12:22</span><span class="status">全票 NT$29</span></div></div><a class="action" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E8%8A%B3%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener">瑞芳車站</a></div>
+            <div class="event-card has-photo"><div class="event-content"><h3>瑞芳 → 十分｜4822 次區間車</h3><p>11:55 出發，12:22 抵達十分。這班為週末、假日行駛；平溪線班距長，11:40 前回到車站看月台並先上洗手間、補水。</p><div class="meta"><span class="status fixed">固定 · 11:55–12:22</span><span class="status">全票 NT$29</span></div><a class="action" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E8%8A%B3%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener">瑞芳車站</a></div><figure class="event-photo"><img src="assets/ruifang-pingxi-train.jpg" alt="從瑞芳出發的平溪線列車" loading="lazy" /><figcaption>4300streetcar／Wikimedia Commons，CC BY 4.0</figcaption></figure></div>
           </article>
 
           <article class="event">
             <time datetime="2026-09-26T12:25">12:25</time><span class="marker"></span>
-            <div class="event-card"><div><h3>十分老街｜看列車走進街屋之間</h3><p>月台與老街幾乎連在一起。先找安全位置看列車進出站，再逛鐵道旁的小店；想放天燈就把願望寫得簡單一點，不放也能專心感受街景。</p><div class="meta"><span class="status fixed">停留 · 12:25–13:00</span><span class="status">天燈為自選體驗</span></div></div><a class="action" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%88%86%E8%80%81%E8%A1%97" target="_blank" rel="noopener">老街地圖</a></div>
+            <div class="event-card has-photo"><div class="event-content"><h3>十分老街｜看列車走進街屋之間</h3><p>月台與老街幾乎連在一起。先找安全位置看列車進出站，再逛鐵道旁的小店；想放天燈就把願望寫得簡單一點，不放也能專心感受街景。</p><div class="meta"><span class="status fixed">停留 · 12:25–13:00</span><span class="status">天燈為自選體驗</span></div><a class="action" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%88%86%E8%80%81%E8%A1%97" target="_blank" rel="noopener">老街地圖</a></div><figure class="event-photo"><img src="assets/shifen-old-street.jpg" alt="十分老街與鐵道旁的街屋和遊客" loading="lazy" /><figcaption>Chainwit.／Wikimedia Commons，CC BY 4.0</figcaption></figure></div>
           </article>
 
           <article class="event">
             <time datetime="2026-09-26T13:00">13:00</time><span class="marker"></span>
-            <div class="event-card"><div><h3>沿河散步｜從老街慢慢切換到自然</h3><p>往十分遊客中心、四廣潭橋與觀瀑吊橋方向前進。街屋逐漸變少，視野換成橋面、基隆河與山壁；單程約 20–25 分鐘。</p><div class="meta"><span class="status">步行約 1.5 公里</span><span class="status">橋面與河谷景觀</span></div></div><a class="action" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8D%81%E5%88%86%E8%BB%8A%E7%AB%99&destination=%E5%8D%81%E5%88%86%E7%80%91%E5%B8%83%E5%85%AC%E5%9C%92&travelmode=walking" target="_blank" rel="noopener">步行導航</a></div>
+            <div class="event-card has-photo"><div class="event-content"><h3>沿河散步｜從老街慢慢切換到自然</h3><p>往十分遊客中心、四廣潭橋與觀瀑吊橋方向前進。街屋逐漸變少，視野換成橋面、基隆河與山壁；單程約 20–25 分鐘。</p><div class="meta"><span class="status">步行約 1.5 公里</span><span class="status">橋面與河谷景觀</span></div><a class="action" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8D%81%E5%88%86%E8%BB%8A%E7%AB%99&destination=%E5%8D%81%E5%88%86%E7%80%91%E5%B8%83%E5%85%AC%E5%9C%92&travelmode=walking" target="_blank" rel="noopener">步行導航</a></div><figure class="event-photo"><img src="assets/shifen-bridges.jpg" alt="十分基隆河谷與多座橋梁景觀" loading="lazy" /><figcaption>Ganmatthew／Wikimedia Commons，CC BY 4.0</figcaption></figure></div>
           </article>
 
           <article class="event">
             <time datetime="2026-09-26T13:25">13:25</time><span class="marker"></span>
-            <div class="event-card"><div><h3>十分瀑布｜在主景觀台感受水幕</h3><p>先到能看見瀑布全貌的主景觀台，再依體力換一個角度。靠近時能感受到水聲與水氣，晴天適合拍河谷層次，雨後則更有氣勢。</p><div class="meta"><span class="status fixed">欣賞 · 13:25–14:05</span><span class="status">免費入園</span></div></div><a class="action" href="https://newtaipei.travel/zh-tw/attractions/detail/109612" target="_blank" rel="noopener">官方資訊</a></div>
+            <div class="event-card has-photo"><div class="event-content"><h3>十分瀑布｜在主景觀台感受水幕</h3><p>先到能看見瀑布全貌的主景觀台，再依體力換一個角度。靠近時能感受到水聲與水氣，晴天適合拍河谷層次，雨後則更有氣勢。</p><div class="meta"><span class="status fixed">欣賞 · 13:25–14:05</span><span class="status">免費入園</span></div><a class="action" href="https://newtaipei.travel/zh-tw/attractions/detail/109612" target="_blank" rel="noopener">官方資訊</a></div><figure class="event-photo"><img src="assets/shifen-waterfall.jpg" alt="十分瀑布正面水幕與河谷" loading="lazy" /><figcaption>Li Hua-hsuan／Wikimedia Commons，CC0</figcaption></figure></div>
           </article>
 
           <article class="event">
             <time datetime="2026-09-26T14:40">14:40</time><span class="marker"></span>
-            <div class="event-card"><div><h3>十分 → 瑞芳｜4825 次區間車</h3><p>14:40 出發，15:12 抵達瑞芳。回程再次沿平溪線看山城與河谷，抵達瑞芳後還有時間休息、補水或買一份點心。</p><div class="meta"><span class="status fixed">主班次 · 14:40–15:12</span><span class="status">全票 NT$29</span></div></div><a class="action" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%88%86%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener">十分車站</a></div>
+            <div class="event-card has-photo"><div class="event-content"><h3>十分 → 瑞芳｜4825 次區間車</h3><p>14:40 出發，15:12 抵達瑞芳。回程再次沿平溪線看山城與河谷；抵達後改走車站後站，用一座老書院為旅程收尾。</p><div class="meta"><span class="status fixed">主班次 · 14:40–15:12</span><span class="status">全票 NT$29</span></div><a class="action" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%88%86%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener">十分車站</a></div><figure class="event-photo"><img src="assets/ruifang-pingxi-train.jpg" alt="行駛於瑞芳車站的臺鐵列車" loading="lazy" /><figcaption>4300streetcar／Wikimedia Commons，CC BY 4.0</figcaption></figure></div>
           </article>
 
           <article class="event">
-            <time datetime="2026-09-26T15:12">15:12</time><span class="marker"></span>
-            <div class="event-card"><div><h3>瑞芳站休息與轉乘</h3><p>先確認 16:09 往臺北的月台，再上洗手間、買水或帶一份點心。這 57 分鐘是刻意保留的誤點與返家緩衝。</p><div class="meta"><span class="status flex">緩衝 · 15:12–16:00</span><span class="status">16:00 前回月台</span></div></div><a class="action" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E8%8A%B3%E8%BB%8A%E7%AB%99" target="_blank" rel="noopener">瑞芳車站</a></div>
+            <time datetime="2026-09-26T15:20">15:20</time><span class="marker"></span>
+            <div class="event-card has-photo"><div class="event-content"><h3>新村芳書院｜在百年老屋慢下來</h3><p>從瑞芳車站後站步行約 2–4 分鐘，到瑞芳街 37 號看由老貨運倉庫轉身而成的書院。先欣賞巷弄、植栽與老屋門面；若當天開放，再入內看書牆與藝文空間。最晚 15:45 離開，15:55 回到月台。</p><div class="meta"><span class="status fixed">停留 · 15:20–15:45</span><span class="status flex">是否入內依現場開放</span><span class="status">仍保留約 14 分鐘候車</span></div><a class="action" href="https://www.google.com/maps/dir/?api=1&destination=%E6%96%B0%E6%9D%91%E8%8A%B3%E6%9B%B8%E9%99%A2" target="_blank" rel="noopener">步行導航</a></div><figure class="event-photo"><a href="https://www.flickr.com/photos/lu_s/46611875931" target="_blank" rel="noopener" title="到 Flickr 查看新村芳書院原始照片"><img src="https://live.staticflickr.com/7876/46611875931_236c96fddc_b.jpg" alt="瑞芳老街巷弄中的新村芳書院外觀" loading="lazy" referrerpolicy="no-referrer" /></a><figcaption>外部相片：盧裕源／Flickr（點圖看原站）</figcaption></figure></div>
           </article>
 
           <article class="event">
@@ -616,6 +655,7 @@
             <ul>
               <li><strong>偏愛老街氣氛</strong><span>把時間留給天燈、鐵道街景與小吃；瀑布改看主景觀台即可。</span></li>
               <li><strong>偏愛自然風景</strong><span>老街買一份點心就出發，讓橋梁、河谷與瀑布成為旅行主角。</span></li>
+              <li><strong>偏愛老屋人文</strong><span>維持 14:40 回瑞芳，將 15:20–15:45 完整留給新村芳書院與後站巷弄。</span></li>
               <li><strong>瑞芳吃得正開心</strong><span>仍以 11:55 平溪線為主；真的錯過時，可留在瑞芳散步，不必硬塞全部景點。</span></li>
             </ul>
           </article>
@@ -624,6 +664,7 @@
             <ul>
               <li><strong>雨勢不大</strong><span>老街仍可逛，瀑布步道放慢速度；橋面與階梯濕滑時不勉強趕路。</span></li>
               <li><strong>大雨或園區異動</strong><span>把重點改成瑞芳美食與十分老街，依官方公告決定是否走瀑布。</span></li>
+              <li><strong>書院當天未開放</strong><span>仍可欣賞百年老屋外觀與後站巷弄；15:35 左右回車站休息，不影響 16:09 回臺北。</span></li>
               <li><strong>需要晚一班回程</strong><span>十分 15:35 到瑞芳 16:04；再搭 16:48 回臺北較安全，但到家通常會晚於 18:00。</span></li>
             </ul>
           </article>
@@ -665,13 +706,15 @@
           <a href="https://newtaipei.travel/zh-tw/attractions/detail/109612" target="_blank" rel="noopener">十分瀑布公園<span>夏季開放時間、最後入園、門票與設施</span></a>
           <a href="https://newtaipei.travel/zh-tw/attractions/detail/110037" target="_blank" rel="noopener">十分老街<span>景點介紹、鐵道安全叮嚀與地址</span></a>
           <a href="https://newtaipei.travel/zh-tw/attractions/detail/402677" target="_blank" rel="noopener">瑞芳美食廣場<span>位置、營業時間與餐點類型</span></a>
+          <a href="https://www.facebook.com/shintsuenfang" target="_blank" rel="noopener">新村芳書院 Facebook<span>出發前確認當日活動、是否開放入內；電話 0905-076-208</span></a>
+          <a href="https://www.culture.ntpc.gov.tw/files/file_pool/1/0J312650840585033554/%E6%96%B0%E5%8C%97%E5%B8%82%E6%96%87%E5%8C%96%E5%AD%A3%E5%88%8A%E7%AC%AC33%E6%9C%9F.pdf" target="_blank" rel="noopener">新北市文化季刊｜新村芳書院<span>百年貨運行改造、書院空間與地方文化背景</span></a>
           <a href="https://www.cwa.gov.tw/" target="_blank" rel="noopener">中央氣象署<span>出發前再查瑞芳／平溪預報與雷達回波</span></a>
         </div>
       </section>
     </main>
 
     <footer class="wrap">
-      行程更新：2026.09.23（景點特色與旅行體驗版）· 照片：Li Hua-hsuan（CC0）與 Chainwit.（CC BY 4.0）· 實際交通與開放狀況以當日官方公告為準
+      行程更新：2026.09.23（新村芳書院＋全行程實景照片版）· 照片：Li Hua-hsuan（CC0）、Chainwit.／4300streetcar／Ganmatthew（CC BY 4.0）、雅婕（CC BY-SA 4.0）；新村芳書院照片由 Flickr 原站外部載入並連回作者頁 · 實際交通與開放狀況以當日官方公告為準
     </footer>
   </body>
 </html>
