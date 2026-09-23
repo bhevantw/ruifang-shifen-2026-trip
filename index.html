@@ -309,6 +309,37 @@
       .feature-list li { padding-left: 18px; position: relative; line-height: 1.65; }
       .feature-list li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--sun); }
 
+      .food-court {
+        overflow: hidden;
+        margin-bottom: 38px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: linear-gradient(135deg, #fff6e4 0%, #fffdf8 58%, #edf7f3 100%);
+        box-shadow: var(--shadow);
+      }
+      .food-court-intro { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(330px, 1.08fr); }
+      .food-court-photo { position: relative; min-height: 348px; margin: 0; overflow: hidden; background: var(--mist); }
+      .food-court-photo img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+      .food-court-photo figcaption { position: absolute; right: 12px; bottom: 10px; left: 12px; width: fit-content; max-width: calc(100% - 24px); padding: 6px 9px; border-radius: 8px; color: #fff; background: rgba(8, 35, 30, 0.72); font-size: 0.75rem; line-height: 1.35; }
+      .food-court-copy { display: flex; flex-direction: column; justify-content: center; padding: 30px 32px; }
+      .food-court-copy h2 { margin-top: 7px; }
+      .food-court-copy p { margin-top: 13px; color: var(--muted); line-height: 1.72; }
+      .food-court-copy .status { margin-top: 17px; }
+      .food-court-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 12px; border-top: 1px solid var(--line); background: rgba(255, 255, 255, 0.58); }
+      .food-pick { display: flex; min-height: 435px; flex-direction: column; overflow: hidden; border: 1px solid #d9e2d9; border-radius: 17px; background: rgba(255, 255, 255, 0.9); }
+      .food-pick-photo { position: relative; aspect-ratio: 16 / 10; margin: 0; overflow: hidden; background: var(--mist); }
+      .food-pick-photo a { display: block; width: 100%; height: 100%; }
+      .food-pick-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+      .food-pick:hover .food-pick-photo img { transform: scale(1.025); }
+      .food-pick-photo figcaption { position: absolute; right: 9px; bottom: 8px; left: 9px; width: fit-content; max-width: calc(100% - 18px); padding: 5px 8px; border-radius: 7px; color: #fff; background: rgba(8, 35, 30, 0.74); font-size: 0.7rem; line-height: 1.35; }
+      .food-pick-copy { display: flex; flex: 1; flex-direction: column; padding: 18px 19px 19px; }
+      .food-pick .pick-label { color: var(--water); font-size: 0.74rem; font-weight: 900; letter-spacing: 0.08em; }
+      .food-pick h3 { margin-top: 8px; color: var(--forest); font-size: 1.12rem; line-height: 1.4; }
+      .food-pick p { margin-top: 8px; color: var(--muted); font-size: 0.91rem; line-height: 1.62; }
+      .food-pick a { width: fit-content; margin-top: auto; padding-top: 13px; color: var(--water); font-size: 0.86rem; font-weight: 850; text-decoration: none; }
+      .food-pick a:hover, .food-pick a:focus-visible { text-decoration: underline; outline: none; }
+      .food-photo-note { margin: -2px 16px 17px; color: var(--muted); font-size: 0.76rem; line-height: 1.55; }
+
       .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 38px; }
       .panel {
         padding: 22px;
@@ -349,6 +380,10 @@
         .highlight-card { min-height: 0; }
         .feature { grid-template-columns: 1fr; }
         .feature figure { min-height: 330px; }
+        .food-court-intro { grid-template-columns: 1fr; }
+        .food-court-photo { min-height: 310px; }
+        .food-court-grid { grid-template-columns: 1fr; }
+        .food-pick { min-height: 0; }
       }
 
       @media (max-width: 680px) {
@@ -380,6 +415,9 @@
         .action { justify-self: start; }
         .feature figure { min-height: 280px; }
         .feature-copy { padding: 23px 20px; }
+        .food-court-photo { min-height: 260px; }
+        .food-court-copy { padding: 24px 20px; }
+        .food-court-grid { padding: 10px; }
         .two-col, .source-list { grid-template-columns: 1fr; }
         .notice { grid-template-columns: 1fr; }
       }
@@ -412,6 +450,7 @@
 
     <nav aria-label="頁面導覽">
       <div class="wrap">
+        <a href="#food-court">瑞芳美食廣場</a>
         <a href="#overview">旅行概覽</a>
         <a href="#highlights">景點亮點</a>
         <a href="#schedule">完整行程</a>
@@ -424,6 +463,48 @@
     </nav>
 
     <main class="wrap">
+      <section id="food-court" class="food-court" aria-labelledby="food-court-title">
+        <div class="food-court-intro">
+          <figure class="food-court-photo">
+            <img src="assets/ruifang-market.jpg" alt="瑞芳美食廣場內的小吃攤位與用餐空間" loading="eager" />
+            <figcaption>瑞芳美食廣場｜雅婕／Wikimedia Commons，CC BY-SA 4.0</figcaption>
+          </figure>
+          <div class="food-court-copy">
+            <span class="kicker">EAT FIRST · RUIFANG FOOD COURT</span>
+            <h2 id="food-court-title">先在瑞芳，吃一桌在地人的日常</h2>
+            <p>美食廣場就在瑞芳車站前方；這次預留 10:35–11:30。以下不是排行榜，而是從食記與網友回饋中挑出最適合這趟行程的三種口味：一碗主食、一份現煎小吃，再加一個可以分享或帶上車的炭烤點心。</p>
+            <span class="status fixed">建議 10:35 先找座位，再分頭點餐</span>
+          </div>
+        </div>
+        <div class="food-court-grid" aria-label="瑞芳美食廣場推薦美食">
+          <article class="food-pick">
+            <figure class="food-pick-photo"><a href="https://bunnyann.tw/food-court/" target="_blank" rel="noopener" title="到來源頁查看佳佳肉羹油飯照片"><img src="https://bunnyann.tw/wp-content/uploads/S__27877456.jpg" alt="瑞芳美食廣場內的佳佳肉羹油飯攤位" loading="lazy" referrerpolicy="no-referrer" /></a><figcaption>外部照片：BunnyAnn（點圖看原文）</figcaption></figure>
+            <div class="food-pick-copy"><span class="pick-label">主食優先</span>
+              <h3>佳佳肉羹油飯</h3>
+              <p><strong>怎麼點：</strong>油飯配肉羹湯。</p>
+              <p><strong>網友為什麼推：</strong>現蒸油飯被形容為鬆軟綿密，蝦米、油蔥與香菇的鹹香很耐吃；肉羹湯清爽、肉羹 Q 彈。兩樣合點，最像一頓完整的早午餐。</p>
+              <a href="https://supertaste.tvbs.com.tw/amp/review/358720" target="_blank" rel="noopener">看食記與網友回饋 →</a></div>
+          </article>
+          <article class="food-pick">
+            <figure class="food-pick-photo"><a href="https://www.walkerland.com.tw/subject/view/397924" target="_blank" rel="noopener" title="到來源頁查看李記蚵仔煎照片"><img src="https://media.walkerland.com.tw/wlk_media/thumbnail/images/upload/subject/2024/09/ee053895af7fd9c2bdda4fb123815c5c800483ad-1200x630.webp" alt="瑞芳美食廣場李記蚵仔煎的蚵仔煎餐點" loading="lazy" referrerpolicy="no-referrer" /></a><figcaption>外部照片：WalkerLand（點圖看原文）</figcaption></figure>
+            <div class="food-pick-copy"><span class="pick-label">現煎分享</span>
+              <h3>李記蚵仔煎</h3>
+              <p><strong>怎麼點：</strong>蚵仔煎；多人可再加蚵仔麵線一起分。</p>
+              <p><strong>網友為什麼推：</strong>不少在地人與遊客會點；食記常提到邊緣微焦酥、裡層 Q 軟，調味不會太膩。</p>
+              <a href="https://supertaste.tvbs.com.tw/amp/review/358720" target="_blank" rel="noopener">看食記與網友回饋 →</a></div>
+          </article>
+          <article class="food-pick">
+            <figure class="food-pick-photo"><a href="https://www.walkerland.com.tw/article/view/332467" target="_blank" rel="noopener" title="到來源頁查看林記福州胡椒餅照片"><img src="https://cdn.walkerland.com.tw/images/upload/poi/p72061/m59813/26b8851de67b34583de4da944401a77f4d818b2a.jpg" alt="林記福州胡椒餅的炭烤胡椒餅" loading="lazy" referrerpolicy="no-referrer" /></a><figcaption>外部照片：WalkerLand（點圖看原文）</figcaption></figure>
+            <div class="food-pick-copy"><span class="pick-label">外帶加分</span>
+              <h3>林記福州胡椒餅</h3>
+              <p><strong>怎麼點：</strong>一到廣場先拿號碼牌；出爐後外帶分享，來不及就帶上平溪線。</p>
+              <p><strong>網友為什麼推：</strong>薄脆的老麵餅皮、炭烤香氣與帶蔥的多汁豬肉餡，是最多人提到的組合。<strong>但可能要等：</strong>不能把它當作保證即拿的主餐。</p>
+              <a href="https://supertaste.tvbs.com.tw/amp/review/358720" target="_blank" rel="noopener">看食記與等候提醒 →</a></div>
+          </article>
+        </div>
+        <p class="food-photo-note">三張店家／餐點照皆為外部來源頁載入，僅作辨識參考；版權與顯示穩定性依原站，未複製進本行程專案。</p>
+      </section>
+
       <section id="overview">
         <div class="section-head">
           <div><span class="kicker">TRIP SNAPSHOT</span><h2>四種風景，一天剛剛好</h2></div>
@@ -706,6 +787,7 @@
           <a href="https://newtaipei.travel/zh-tw/attractions/detail/109612" target="_blank" rel="noopener">十分瀑布公園<span>夏季開放時間、最後入園、門票與設施</span></a>
           <a href="https://newtaipei.travel/zh-tw/attractions/detail/110037" target="_blank" rel="noopener">十分老街<span>景點介紹、鐵道安全叮嚀與地址</span></a>
           <a href="https://newtaipei.travel/zh-tw/attractions/detail/402677" target="_blank" rel="noopener">瑞芳美食廣場<span>位置、營業時間與餐點類型</span></a>
+          <a href="https://supertaste.tvbs.com.tw/amp/review/358720" target="_blank" rel="noopener">瑞芳美食廣場食記／網友回饋<span>佳佳肉羹油飯、李記蚵仔煎、林記福州胡椒餅的推薦理由與等候提醒</span></a>
           <a href="https://www.facebook.com/shintsuenfang" target="_blank" rel="noopener">新村芳書院 Facebook<span>出發前確認當日活動、是否開放入內；電話 0905-076-208</span></a>
           <a href="https://www.culture.ntpc.gov.tw/files/file_pool/1/0J312650840585033554/%E6%96%B0%E5%8C%97%E5%B8%82%E6%96%87%E5%8C%96%E5%AD%A3%E5%88%8A%E7%AC%AC33%E6%9C%9F.pdf" target="_blank" rel="noopener">新北市文化季刊｜新村芳書院<span>百年貨運行改造、書院空間與地方文化背景</span></a>
           <a href="https://www.cwa.gov.tw/" target="_blank" rel="noopener">中央氣象署<span>出發前再查瑞芳／平溪預報與雷達回波</span></a>
@@ -714,7 +796,7 @@
     </main>
 
     <footer class="wrap">
-      行程更新：2026.09.23（新村芳書院＋全行程實景照片版）· 照片：Li Hua-hsuan（CC0）、Chainwit.／4300streetcar／Ganmatthew（CC BY 4.0）、雅婕（CC BY-SA 4.0）；新村芳書院照片由 Flickr 原站外部載入並連回作者頁 · 實際交通與開放狀況以當日官方公告為準
+      行程更新：2026.09.23（瑞芳美食廣場導覽＋全行程實景照片版）· 照片：Li Hua-hsuan（CC0）、Chainwit.／4300streetcar／Ganmatthew（CC BY 4.0）、雅婕（CC BY-SA 4.0）；新村芳書院照片由 Flickr 原站外部載入並連回作者頁 · 實際交通與開放狀況以當日官方公告為準
     </footer>
   </body>
 </html>
